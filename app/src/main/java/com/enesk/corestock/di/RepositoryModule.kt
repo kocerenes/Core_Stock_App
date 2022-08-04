@@ -2,8 +2,10 @@ package com.enesk.corestock.di
 
 import com.enesk.corestock.data.csv.CSVParser
 import com.enesk.corestock.data.csv.CompanyListingsParser
+import com.enesk.corestock.data.csv.IntradayInfoParser
 import com.enesk.corestock.data.repository.StockRepositoryImpl
 import com.enesk.corestock.domain.model.CompanyListing
+import com.enesk.corestock.domain.model.IntradayInfo
 import com.enesk.corestock.domain.repository.StockRepository
 import dagger.Binds
 import dagger.Module
@@ -20,6 +22,12 @@ abstract class RepositoryModule {
     abstract fun bindCompanyListingsParser(
         companyListingsParser : CompanyListingsParser
     ): CSVParser<CompanyListing>
+
+    @Binds
+    @Singleton
+    abstract fun bindIntradayInfoParser(
+        intradayInfoParser: IntradayInfoParser
+    ): CSVParser<IntradayInfo>
 
     @Binds
     @Singleton

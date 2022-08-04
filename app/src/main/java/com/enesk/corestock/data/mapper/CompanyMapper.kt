@@ -1,6 +1,8 @@
 package com.enesk.corestock.data.mapper
 
 import com.enesk.corestock.data.local.CompanyListingEntity
+import com.enesk.corestock.data.remote.dto.CompanyInfoDto
+import com.enesk.corestock.domain.model.CompanyInfo
 import com.enesk.corestock.domain.model.CompanyListing
 
 fun CompanyListingEntity.toCompanyListing(): CompanyListing{
@@ -16,5 +18,15 @@ fun CompanyListing.toCompanyListingEntity(): CompanyListingEntity{
         name = name,
         symbol = symbol,
         exchange = exchange
+    )
+}
+
+fun CompanyInfoDto.toCompanyInfo(): CompanyInfo {
+    return CompanyInfo(
+        symbol = symbol ?: "",
+        description = description ?: "",
+        name = name ?: "",
+        country = country ?: "",
+        industry = industry ?: ""
     )
 }

@@ -10,7 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.enesk.corestock.presentation.company_listings.NavGraphs
+import com.enesk.corestock.presentation.NavGraphs
 import com.enesk.corestock.ui.theme.CoreStockTheme
 import com.ramcosta.composedestinations.DestinationsNavHost
 import com.ramcosta.composedestinations.annotation.NavGraph

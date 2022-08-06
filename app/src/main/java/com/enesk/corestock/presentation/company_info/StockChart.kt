@@ -1,6 +1,8 @@
 package com.enesk.corestock.presentation.company_info
 
 import android.graphics.Paint
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.Canvas
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -51,7 +53,7 @@ fun StockChart(
         val spacePerHour = (size.width - spacing) / infos.size
         (0 until infos.size - 1 step 2).forEach { i->
             val info = infos[i]
-            val hour = info.date
+            val hour = info.date.hour
             drawContext.canvas.nativeCanvas.apply {
                 drawText(
                     hour.toString(),
@@ -63,7 +65,7 @@ fun StockChart(
         }
 
         val priceStep = (upperValue - lowerValue) / 5f
-        (0..5).forEach { i->
+        (0..4).forEach { i->
             drawContext.canvas.nativeCanvas.apply {
                 drawText(
                     round(lowerValue + priceStep * i).toString(),
